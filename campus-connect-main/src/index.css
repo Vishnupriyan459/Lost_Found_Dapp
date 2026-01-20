@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Campus-fresh teal/cyan palette */
+    --background: 180 20% 99%;
+    --foreground: 192 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 192 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 192 50% 10%;
+
+    /* Primary - Vibrant teal */
+    --primary: 174 72% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 174 72% 55%;
+
+    /* Secondary - Soft gray-teal */
+    --secondary: 180 15% 95%;
+    --secondary-foreground: 192 50% 15%;
+
+    /* Muted - Subtle backgrounds */
+    --muted: 180 10% 94%;
+    --muted-foreground: 192 20% 45%;
+
+    /* Accent - Warm amber for rewards */
+    --accent: 38 92% 50%;
+    --accent-foreground: 38 90% 15%;
+
+    /* Token/Reward specific */
+    --token: 38 92% 50%;
+    --token-foreground: 0 0% 100%;
+    --token-glow: 38 92% 60%;
+
+    /* Status colors */
+    --success: 152 60% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 90% 15%;
+    --info: 200 80% 50%;
+    --info-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 15% 90%;
+    --input: 180 15% 90%;
+    --ring: 174 72% 40%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 40%) 0%, hsl(180 60% 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(45 95% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(180 20% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(174 72% 45% / 0.1) 0%, hsl(38 92% 50% / 0.1) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px hsl(192 50% 10% / 0.04);
+    --shadow-md: 0 4px 12px hsl(192 50% 10% / 0.08);
+    --shadow-lg: 0 12px 40px hsl(192 50% 10% / 0.12);
+    --shadow-glow: 0 0 30px hsl(174 72% 40% / 0.25);
+    --shadow-token: 0 0 20px hsl(38 92% 50% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 180 20% 98%;
+    --sidebar-foreground: 192 50% 15%;
+    --sidebar-primary: 174 72% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 15% 94%;
+    --sidebar-accent-foreground: 192 50% 15%;
+    --sidebar-border: 180 15% 90%;
+    --sidebar-ring: 174 72% 40%;
+  }
+
+  .dark {
+    --background: 200 25% 8%;
+    --foreground: 180 15% 95%;
+
+    --card: 200 25% 10%;
+    --card-foreground: 180 15% 95%;
+
+    --popover: 200 25% 10%;
+    --popover-foreground: 180 15% 95%;
+
+    --primary: 174 65% 50%;
+    --primary-foreground: 200 25% 8%;
+    --primary-glow: 174 65% 60%;
+
+    --secondary: 200 20% 15%;
+    --secondary-foreground: 180 15% 90%;
+
+    --muted: 200 20% 15%;
+    --muted-foreground: 180 10% 60%;
+
+    --accent: 38 85% 55%;
+    --accent-foreground: 200 25% 8%;
+
+    --token: 38 85% 55%;
+    --token-foreground: 200 25% 8%;
+    --token-glow: 38 85% 65%;
+
+    --success: 152 55% 50%;
+    --success-foreground: 200 25% 8%;
+    --warning: 38 85% 55%;
+    --warning-foreground: 200 25% 8%;
+    --info: 200 75% 55%;
+    --info-foreground: 200 25% 8%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 18%;
+    --input: 200 20% 18%;
+    --ring: 174 65% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(174 65% 50%) 0%, hsl(180 55% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38 85% 55%) 0%, hsl(45 90% 60%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(200 25% 12%) 0%, hsl(200 25% 10%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(174 65% 50% / 0.15) 0%, hsl(38 85% 55% / 0.1) 100%);
+
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 12px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 12px 40px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(174 65% 50% / 0.3);
+    --shadow-token: 0 0 20px hsl(38 85% 55% / 0.35);
+
+    --sidebar-background: 200 25% 10%;
+    --sidebar-foreground: 180 15% 90%;
+    --sidebar-primary: 174 65% 50%;
+    --sidebar-primary-foreground: 200 25% 8%;
+    --sidebar-accent: 200 20% 15%;
+    --sidebar-accent-foreground: 180 15% 90%;
+    --sidebar-border: 200 20% 18%;
+    --sidebar-ring: 174 65% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-text-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .token-badge {
+    background: var(--gradient-accent);
+    @apply text-token-foreground font-semibold px-3 py-1 rounded-full text-sm;
+    box-shadow: var(--shadow-token);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .status-open {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+
+  .status-matched {
+    @apply bg-warning/10 text-warning border border-warning/20;
+  }
+
+  .status-closed {
+    @apply bg-muted text-muted-foreground border border-border;
+  }
+
+  .animate-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    to {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+    }
+  }
+}

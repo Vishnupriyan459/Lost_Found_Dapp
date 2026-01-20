@@ -1,0 +1,37 @@
+// hardhat.config.cjs
+const path = require("path");
+
+// Explicitly load .env from the same folder as hardhat.config.cjs
+require("dotenv").config({ path: path.resolve(__dirname, ".env") });
+
+require("@nomicfoundation/hardhat-toolbox");
+
+const privateKey = process.env.SYSTEM_PRIVATE_KEY;
+const ganacheUrl = process.env.GANACHE_URL;
+
+if (!privateKey || !ganacheUrl) {
+    throw new Error('Please set SYSTEM_PRIVATE_KEY and GANACHE_URL in your .env file');
+}
+
+module.exports = {
+    solidity: '0.8.20',
+    networks: {
+        ganache: {
+            url: ganacheUrl,
+            accounts: [privateKey],
+        },
+    },
+};
+
+
+
+
+// .env file example:
+// SYSTEM_PRIVATE_KEY=0x3566f921a46dffd8e729fbc3d97a4ee8f61c642eb9a74463bf8820a4af74ed89
+// GANACHE_URL=http://127.0.0.1:7545
+// TOKEN_CONTRACT_ADDRESS=0xC4a863b291525Aa399772a92db77481cE25D5CEa
+// MONGO_URI=mongodb://127.0.0.1:27017/lostandfound
+// PORT=5000
+// JWT_SECRET=losterfoundersareawesome
+// SYSTEM_PUBLIC_KEY=0x9bDd1be5c23d34C0ECCeC5EEA776bb8611b89cf1
+// MINT_AMOUNT=100
